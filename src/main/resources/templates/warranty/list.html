@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty List</title>
+</head>
+<body>
+
+<h2>Warranty List</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Device</th>
+        <th>Expiration Date</th>
+        <th>Action</th>
+    </tr>
+    <!-- Loop through warranties and display them -->
+    <tr th:each="warranty : ${warranties}">
+        <td th:text="${warranty.id}"></td>
+        <td th:text="${warranty.device.name}"></td>
+        <td th:text="${warranty.expirationDate}"></td>
+        <td>
+            <a th:href="@{/warranty/view/{id}(id=${warranty.id})}">View</a>
+            <a th:href="@{/warranty/edit/{id}(id=${warranty.id})}">Edit</a>
+            <a th:href="@{/warranty/delete/{id}(id=${warranty.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

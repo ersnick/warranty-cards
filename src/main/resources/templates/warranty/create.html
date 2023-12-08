@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Warranty</title>
+</head>
+<body>
+
+<h2>Create Warranty</h2>
+
+<form action="/warranty/create/{deviceId}" method="post">
+  <input type="hidden" name="deviceId" th:value="${device.id}">
+  <label for="expirationDate">Expiration Date:</label>
+  <input type="text" id="expirationDate" name="expirationDate" required>
+  <br>
+  <button type="submit">Create Warranty</button>
+</form>
+
+</body>
+</html>

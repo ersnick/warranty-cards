@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Warranty</title>
+</head>
+<body>
+
+<h2>Edit Warranty</h2>
+
+<form action="/warranty/edit/{id}" method="post">
+    <input type="hidden" name="id" th:value="${warranty.id}">
+    <label for="expirationDate">Expiration Date:</label>
+    <input type="text" id="expirationDate" name="expirationDate" th:value="${warranty.expirationDate}" required>
+    <br>
+    <button type="submit">Save Changes</button>
+</form>
+
+</body>
+</html>
